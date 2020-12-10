@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "c0ec0bc9-8926-412a-b7ae-6d02958d7f0d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 2000,
+  "height": 3556,
+  "platformSettings": {},
+  "subMetas": {
+    "Mystic Assassin": {
+      "ver": "1.0.4",
+      "uuid": "4473a379-61c8-4774-a92d-aecbd986a8ba",
+      "rawTextureUuid": "c0ec0bc9-8926-412a-b7ae-6d02958d7f0d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 553,
+      "offsetY": -1454,
+      "trimX": 1493,
+      "trimY": 2908,
+      "width": 120,
+      "height": 648,
+      "rawWidth": 2000,
+      "rawHeight": 3556,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

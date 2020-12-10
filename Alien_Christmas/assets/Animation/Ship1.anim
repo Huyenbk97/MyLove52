@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "Ship1",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.06666666666666667,
+  "sample": 60,
+  "speed": 0.3,
+  "wrapMode": 22,
+  "curveData": {
+    "comps": {
+      "cc.Sprite": {
+        "spriteFrame": [
+          {
+            "frame": 0,
+            "value": {
+              "__uuid__": "1ae26de0-1460-4328-bd48-fad436ed6fe0"
+            }
+          },
+          {
+            "frame": 0.016666666666666666,
+            "value": {
+              "__uuid__": "383e8713-0460-4943-ae85-81445417780e"
+            }
+          },
+          {
+            "frame": 0.03333333333333333,
+            "value": {
+              "__uuid__": "e54d2857-5711-4d6f-adcb-ea532ce99557"
+            }
+          },
+          {
+            "frame": 0.05,
+            "value": {
+              "__uuid__": "e80cdf1d-0f58-4965-88ee-fed1ab8de4e7"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "events": []
+}
