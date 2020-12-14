@@ -24,8 +24,6 @@ export default class Bad extends cc.Component {
   shield :cc.Node=null;
  onCollisionEnter(other,self){
    console.log(other.name+self.name);
-   other.node.destroy();
-   self.node.destroy();
    GameController.Instance.decreaseEnemy();
    cc.audioEngine.playEffect(this.explosion,false);       
    this.explosionRun(); 

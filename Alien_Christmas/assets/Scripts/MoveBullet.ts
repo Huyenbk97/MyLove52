@@ -12,45 +12,27 @@ export default class NewClass extends cc.Component {
     @property(cc.Node)
     Cavas: Node = null;
     @property
-    bulletTime: number = 500;
+    bulletTime: number = 100;
     @property
-    BulletSpeed:number =800;
-
+    BulletSpeed:number =1000;
+    @property
+    radianNumber: number = 75;
     // LIFE-CYCLE CALLBACKS:
-
-    onLoad () {}
+    @property
+    rotation: number = 0;
+    // onLoad () {}
     start () {
 
     }
     update(dt) {
-        if (window.matchMedia("(orientation: portrait)").matches) {
-            this.BulletSpeed = 1200;
-            this.node.setScale(1.5, 1.5);
-            this.bulletTime -= 1;
-            this.node.setPosition(this.node.position.x,this.node.position.y += this.BulletSpeed*dt);
-            console.log(this.node.name);
-            if(this.bulletTime==0){
-                this.node.destroy();
-            //this.node.position.y = this.node.position.y + 5;
-                console.log(this.node.parent.getContentSize().height);
-         
-           }
+        this.node.setRotation(this.rotation);
+        let radian = this.radianNumber/360 * 2 * Math.PI;
+        this.bulletTime -=3.5;
+        this.node.setPosition(this.node.position.x+=Math.cos(radian)*dt*this.BulletSpeed,this.node.position.y +=Math.sin(radian)*this.BulletSpeed*dt);
+        if(this.bulletTime==0){
+            this.node.destroy();
+        //this.node.position.y = this.node.position.y + 5;
         }
-            if (window.matchMedia("(orientation: landscape)").matches) {
-                this.BulletSpeed = 800;
-                this.node.setScale(1.2, 1.2);
-            this.bulletTime -= 1;
-            this.node.setPosition(this.node.position.x,this.node.position.y += this.BulletSpeed*dt);
-            console.log(this.node.name);
-            if(this.bulletTime==0){
-                this.node.destroy();
-            //this.node.position.y = this.node.position.y + 5;
-                console.log(this.node.parent.getContentSize().height);
-           }
-      }
-     
-            
-     
        }
     // update (dt) {}
 }

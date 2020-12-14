@@ -1,7 +1,6 @@
 import bullet from "./Bullet";
 import GameUIcontroller from "./GameUIcontroller";
-const { ccclass, property } = cc._decorator;
-import Gamecontroller from "./Gamecontroller";
+const {ccclass, property} = cc._decorator;
 @ccclass
 export default class Ship extends cc.Component {
     static Instance: Ship = null;
@@ -11,16 +10,38 @@ export default class Ship extends cc.Component {
     // initBulletPosition1: cc.Node = null;
     @property(cc.Node)
     ship: cc.Node = null;
- 
+    @property(cc.Node)
+    popup: cc.Node = null;
+    @property(cc.Prefab)
+    shield: cc.Prefab = null;
+    
     // @property(cc.Node)
     // initBulletPosition2:cc.Node=null;
     // @property()
     @property(cc.Prefab)
     shipBullet: cc.Node = null;
-    @property(cc.NodePool)
-    bulletPool: cc.NodePool = null;
-    @property(cc.Node)
-    popup: cc.Node = null;
+    @property
+    bulletPool: number = 0;
+    @property
+    bullet1:number=1;
+    @property
+    bullet2: boolean = false;
+    @property(cc.Prefab)
+    shipBullet1: cc.Node = null;
+    @property(cc.Prefab)
+    shipBullet2: cc.Node = null;
+    @property(cc.Prefab)
+    shipBullet3: cc.Node = null;
+    @property(cc.Prefab)
+    shipBullet4: cc.Node = null;
+    @property(cc.Prefab)
+    shipBullet5: cc.Node = null;
+    @property(cc.Prefab)
+    shipBullet6: cc.Node = null;
+    @property(cc.Prefab)
+    shipBullet7: cc.Node = null;
+    @property(cc.Prefab)
+    shipBullet8: cc.Node = null;
     @property({
         type:cc.AudioClip
     })
@@ -30,10 +51,11 @@ export default class Ship extends cc.Component {
         type:cc.AudioClip
     })
     backgroundSound=null;
+
     @property(cc.Node)
     bulletParent:cc.Node=null;
     fireRate:number=1;
-isGamestart:boolean=false;
+    isGamestart:boolean=false;
     positionXY(event){
         // //lay toa do xy tim ra goc xoay
         // var playerPosition =cc.v2(this.node.position.x,this.node.position.y);
@@ -47,43 +69,137 @@ isGamestart:boolean=false;
         // this.node.angle=angleD;
     }
     onLoad() {
-        this.bulletTime = 0;
-        this.ship.on(cc.Node.EventType.TOUCH_MOVE, function (event) {
-            this.bulletPool = new cc.NodePool();
-            //this.check();
-          }, this);
-       
-        this.node.parent.on('touchmove',this.startShotting,this);
-        cc.audioEngine.playEffect(this.backgroundSound, false); 
-       
+      Ship.Instance = this;
+        var manager = cc.director.getCollisionManager();
+        manager.enabled = true;
+        //if (this.popup.active==false) {
+            this.bulletTime = 0;
+            this.ship.on(cc.Node.EventType.TOUCH_MOVE, function (event) {
+                this.bulletPool = new cc.NodePool();
+                //this.Ship.getComponent(cc.Animation).play();
+              }, this);
+            //   this.scheduleOnce(function() {
+            //     // Here `this` is referring to the component
+            //            GameUIcontroller.Instance.showBanner();
+            // }, 12);
+            //this.node.parent.on('touchmove',this.startShotting,this);
+       // }
+        console.log(this.bullet1);
+          
     }
     start () {
     }
-    // check() {
-    //     if (this.popup.active==false) {
-    //         this.scheduleOnce(function() {
-    //             // Here `this` is referring to the component
-    //             GameUIcontroller.Instance.showBanner();
-    //         }, 12); 
-    //         Gamecontroller.Instance.Cavas();
-    //     }
-    // }
-    // createBullet() {
-    //     if (this.popup.active == false) {    
-    //         let bullet = null;
-    //         if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
-    //             bullet = this.bulletPool.get();
-    //         } else { // if not enough node in the pool, we call cc.instantiate to create node
-    //             bullet = cc.instantiate(this.shipBullet);
-    //         }
-    //         bullet.parent = this.node;
-    //         var pos = this.ship.getPosition();
-    //         bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height - 30))
-    //         cc.audioEngine.playEffect(this.shoot, false);
-    //     }
-    // }
+   
+    spawShield1() {
+        console.log("spawShieldShip11111");
+        this.bullet1 += 1
+        console.log("so dan"+this.bullet1);
+        
+    }
+    createBullet() {
+        // if (this.popup.active==false&&this.bullet1==1 ) {
+ 
+        // ////
+            let bullet = null;
+            if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
+            bullet = this.bulletPool.get();
+            } else { // if not enough node in the pool, we call cc.instantiate to create node
+
+            bullet = cc.instantiate(this.shipBullet1);
+            }
+            bullet.parent = this.node;
+            var pos = this.ship.getPosition();
+        bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height / 2))
+        //////////////////////////////////////////////////// 
+            let bullet = null;
+            if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
+            bullet = this.bulletPool.get();
+            } else { // if not enough node in the pool, we call cc.instantiate to create node
+
+            bullet = cc.instantiate(this.shipBullet2);
+            }
+            bullet.parent = this.node;
+            var pos = this.ship.getPosition();
+        bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height / 2+100))
+
+        ///////////////////////////////////////////////////
+        let bullet = null;
+        if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
+        bullet = this.bulletPool.get();
+        } else { // if not enough node in the pool, we call cc.instantiate to create node
+
+        bullet = cc.instantiate(this.shipBullet3);
+        }
+        bullet.parent = this.node;
+        var pos = this.ship.getPosition();
+        bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height / 2+50))
+        //////////////////////////////////////////////////// 
+        let bullet = null;
+        if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
+        bullet = this.bulletPool.get();
+        } else { // if not enough node in the pool, we call cc.instantiate to create node
+
+        bullet = cc.instantiate(this.shipBullet4);
+        }
+        bullet.parent = this.node;
+        var pos = this.ship.getPosition();
+        bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height / 2 + 0))  
+        ///////////////////////////////////////////////////
+        let bullet = null;
+        if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
+        bullet = this.bulletPool.get();
+        } else { // if not enough node in the pool, we call cc.instantiate to create node
+
+        bullet = cc.instantiate(this.shipBullet5);
+        }
+        bullet.parent = this.node;
+        var pos = this.ship.getPosition();
+        bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height / 2+50)) 
+        let bullet = null;
+        if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
+        bullet = this.bulletPool.get();
+        } else { // if not enough node in the pool, we call cc.instantiate to create node
+
+        bullet = cc.instantiate(this.shipBullet6);
+        }
+        bullet.parent = this.node;
+        var pos = this.ship.getPosition();
+        bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height / 2+150)) 
+        let bullet = null;
+        if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
+        bullet = this.bulletPool.get();
+        } else { // if not enough node in the pool, we call cc.instantiate to create node
+
+        bullet = cc.instantiate(this.shipBullet7);
+        }
+        bullet.parent = this.node;
+        var pos = this.ship.getPosition();
+        bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height / 2)) 
+        let bullet = null;
+        if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
+        bullet = this.bulletPool.get();
+        } else { // if not enough node in the pool, we call cc.instantiate to create node
+
+        bullet = cc.instantiate(this.shipBullet4);
+        }
+        bullet.parent = this.node;
+        var pos = this.ship.getPosition();
+        bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height / 2 + 250)) 
+        /// 
+        let bullet = null;
+        if (this.bulletPool.size() > 0) { // use size method to check if there're nodes available in the pool
+        bullet = this.bulletPool.get();
+        } else { // if not enough node in the pool, we call cc.instantiate to create node
+
+        bullet = cc.instantiate(this.shipBullet8);
+        }
+        bullet.parent = this.node;
+        var pos = this.ship.getPosition();
+    bullet.setPosition(cc.v2(pos.x, pos.y + this.ship.height / 2+300)) 
+    }
+    
     onKill() {
-        this.bullerPool.put(bullet);
+        this.bulletPool.put(bullet);
     }
     InitBullet(){
         // var bullet = cc.instantiate(this.shipBullet);
@@ -107,18 +223,23 @@ isGamestart:boolean=false;
         // this.schedule(function(){
         //     self.shotting();
         // },this.fireRate);
-        this.schedule(this.InitBullet,0.1,cc.macro.REPEAT_FOREVER,0);
+        this.schedule(this.createBullet,0.18,cc.macro.REPEAT_FOREVER,0);
     }
 
     shotting(){
         this.InitBullet();
     }
-    // update(dt) {
-    //     this.bulletTime++
-    //      if (this.bulletTime==8) {
-    //          this.bulletTime = 0;
-    //          this.createBullet();
-    //      }
+    update(dt) {
+        this.bulletTime++
+         if (this.bulletTime==8) {
+             this.bulletTime = 0;
+             this.createBullet();
+         }
          
-    //  }
+     }
+     stopShoot(){
+        cc.audioEngine.stopAll();
+        this.ship.stopAllActions();
+        this.shipBullet.stopAllActions();
+     }
 }
