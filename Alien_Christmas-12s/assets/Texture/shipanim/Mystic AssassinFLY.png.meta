@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "6cfdd789-bab0-4d66-8f2a-c403244c1848",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 63,
+  "height": 156,
+  "platformSettings": {},
+  "subMetas": {
+    "Mystic AssassinFLY": {
+      "ver": "1.0.4",
+      "uuid": "e39f7acc-d985-4660-8149-5cb14676d410",
+      "rawTextureUuid": "6cfdd789-bab0-4d66-8f2a-c403244c1848",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -2,
+      "offsetY": 2.5,
+      "trimX": 7,
+      "trimY": 8,
+      "width": 45,
+      "height": 135,
+      "rawWidth": 63,
+      "rawHeight": 156,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

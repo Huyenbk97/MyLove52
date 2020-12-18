@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "c90ac7e0-6378-47b3-8b06-f9488ce85596",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 80,
+  "height": 167,
+  "platformSettings": {},
+  "subMetas": {
+    "boss_worldcup_gun": {
+      "ver": "1.0.4",
+      "uuid": "d93747c2-72ff-4935-a500-4908609d0ed8",
+      "rawTextureUuid": "c90ac7e0-6378-47b3-8b06-f9488ce85596",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 18.5,
+      "offsetY": 0.5,
+      "trimX": 40,
+      "trimY": 2,
+      "width": 37,
+      "height": 162,
+      "rawWidth": 80,
+      "rawHeight": 167,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

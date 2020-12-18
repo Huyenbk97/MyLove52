@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "3651232f-0599-43e4-8cdf-7a8aca0d89f5",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 123,
+  "height": 288,
+  "platformSettings": {},
+  "subMetas": {
+    "boss_worldcup_right_wing_1": {
+      "ver": "1.0.4",
+      "uuid": "fefcb2f4-4c1b-4883-982b-be2c3026036d",
+      "rawTextureUuid": "3651232f-0599-43e4-8cdf-7a8aca0d89f5",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": 0.5,
+      "trimX": 3,
+      "trimY": 2,
+      "width": 118,
+      "height": 283,
+      "rawWidth": 123,
+      "rawHeight": 288,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

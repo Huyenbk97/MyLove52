@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "86597b37-5dc5-41ae-ad01-5847d3ca8dd7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 254,
+  "height": 410,
+  "platformSettings": {},
+  "subMetas": {
+    "boss_worldcup_head": {
+      "ver": "1.0.4",
+      "uuid": "c0275aa8-9672-4a03-ab6a-16020d9d12c2",
+      "rawTextureUuid": "86597b37-5dc5-41ae-ad01-5847d3ca8dd7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 63.5,
+      "offsetY": 0,
+      "trimX": 127,
+      "trimY": 0,
+      "width": 127,
+      "height": 410,
+      "rawWidth": 254,
+      "rawHeight": 410,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

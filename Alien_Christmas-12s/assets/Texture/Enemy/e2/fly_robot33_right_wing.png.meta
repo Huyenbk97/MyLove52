@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.5",
+  "uuid": "784c9e4c-f5b2-43fa-b49a-d4506ba36705",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 68,
+  "height": 117,
+  "platformSettings": {},
+  "subMetas": {
+    "fly_robot33_right_wing": {
+      "ver": "1.0.4",
+      "uuid": "f6b527ed-78e7-4381-8d81-06a4827f238d",
+      "rawTextureUuid": "784c9e4c-f5b2-43fa-b49a-d4506ba36705",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 66,
+      "height": 114,
+      "rawWidth": 68,
+      "rawHeight": 117,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
