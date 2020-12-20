@@ -9,10 +9,9 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class NewClass extends cc.Component {
+   
     @property
-    a: number = 500;
-    @property
-    b: number = 500;
+    r: number = 220;
     @property
     radian: number = 0;
     @property(cc.Label)
@@ -25,15 +24,15 @@ export default class NewClass extends cc.Component {
 
     // onLoad () {}
     updatePos(){
-        this.node.x = this.a * Math.cos(this.radian);
-        this.node.y = this.b * Math.sin(this.radian);
+        this.node.x = 4.405+this.r * Math.cos(this.radian);
+        this.node.y = 288.652+this.r * Math.sin(this.radian);
     }
     start () {
 
     }
 
     update (dt) {
-        this.radian = this.radian + dt * 1;
+        this.radian = this.radian + dt * 0.5;
         this.updatePos();
     }
 }

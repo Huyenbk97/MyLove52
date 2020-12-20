@@ -44,53 +44,53 @@ export default class GameController extends cc.Component {
       })
      backgroundSound =null;
     onLoad() {
-        if (window.matchMedia("(orientation: portrait)").matches) {
-            this.node = cc.find("Canvas/ShipHero");
-            this.node.setScale(1.2, 1.2);
-            //this.node.setPosition(0,300)
-            this.node = cc.find("Canvas/Boss");
-            this.node.setScale(1.8, 1.8);
-            var screen = cc.find("Canvas");
-            //this.node.setContentSize(screen.getContentSize().width * this.width / 100, screen.getContentSize().height * this.height / 100)
-            this.node = cc.find("Canvas/IconGame");
-            this.node.setScale(1.7, 1.7);
-            this.node.setPosition(473.664, -1079.431)
-            this.node = cc.find("Canvas/PlayNow");
-            this.node.setScale(1.6, 1.6);
-            this.node.setPosition(29.01, -1104.452)
-            this.node = cc.find("Canvas/TextPlay");
-            this.node.setScale(1.1,1.1);
-            this.node.setPosition(26.712,-303.465)
+        // if (window.matchMedia("(orientation: portrait)").matches) {
+        //     this.node = cc.find("Canvas/ShipHero");
+        //     this.node.setScale(1.2, 1.2);
+        //     //this.node.setPosition(0,300)
+        //     this.node = cc.find("Canvas/Boss");
+        //     this.node.setScale(1.8, 1.8);
+        //     var screen = cc.find("Canvas");
+        //     //this.node.setContentSize(screen.getContentSize().width * this.width / 100, screen.getContentSize().height * this.height / 100)
+        //     this.node = cc.find("Canvas/IconGame");
+        //     this.node.setScale(1.7, 1.7);
+        //     this.node.setPosition(473.664, -1079.431)
+        //     this.node = cc.find("Canvas/PlayNow");
+        //     this.node.setScale(1.6, 1.6);
+        //     this.node.setPosition(29.01, -1104.452)
+        //     this.node = cc.find("Canvas/TextPlay");
+        //     this.node.setScale(1.1,1.1);
+        //     this.node.setPosition(26.712,-303.465)
            
-         }
-        if (window.matchMedia("(orientation: landscape)").matches) {
-            this.node = cc.find("Canvas/ShipHero");
-            this.node.setScale(0.6, 0.6);
-            this.node.setPosition(20,-250)
-            this.node = cc.find("Canvas/Boss");
-            this.node.setScale(0.9, 0.9);
-            this.node.setPosition(0, 200)
-            this.node = cc.find("Canvas/TextPlay");
-            this.node.setScale(0.7, 0.7);
-            this.node.setPosition(26.712, -90)
-            this.node = cc.find("Canvas/IconGame");
-            this.node.setPosition(555, -330)
-            this.node.setScale(1.1, 1.1);
-            this.node = cc.find("Canvas/PlayNow");
-            this.node.setScale(1.1, 1.1);
-            this.node.setPosition(22.602, -350)
-            //this.node.setContentSize(screen.getContentSize().width * this.width / 100, screen.getContentSize().height * this.height / 100)
-         }
+        //  }
+        // if (window.matchMedia("(orientation: landscape)").matches) {
+        //     this.node = cc.find("Canvas/ShipHero");
+        //     this.node.setScale(0.6, 0.6);
+        //     this.node.setPosition(20,-250)
+        //     this.node = cc.find("Canvas/Boss");
+        //     this.node.setScale(0.9, 0.9);
+        //     this.node.setPosition(0, 200)
+        //     this.node = cc.find("Canvas/TextPlay");
+        //     this.node.setScale(0.7, 0.7);
+        //     this.node.setPosition(26.712, -90)
+        //     this.node = cc.find("Canvas/IconGame");
+        //     this.node.setPosition(555, -330)
+        //     this.node.setScale(1.1, 1.1);
+        //     this.node = cc.find("Canvas/PlayNow");
+        //     this.node.setScale(1.1, 1.1);
+        //     this.node.setPosition(22.602, -350)
+        //     //this.node.setContentSize(screen.getContentSize().width * this.width / 100, screen.getContentSize().height * this.height / 100)
+         
         //this.bulletTime = 0;
-        GameController.Instance = this;
-        //this.node.getComponent(Test).callTest();
-        // this.popup.on(cc.Node.EventType.TOUCH_MOVE, function (event) {
-        //     this.moveHand.destroy();
-        //     this.bulletPool = new cc.NodePool();
-        // }, this);
-        this.setTouch();
-        //this.InitBullet();
-        //this.createBullet();
+        // GameController.Instance = this;
+        // //this.node.getComponent(Test).callTest();
+        // // this.popup.on(cc.Node.EventType.TOUCH_MOVE, function (event) {
+        // //     this.moveHand.destroy();
+        // //     this.bulletPool = new cc.NodePool();
+        // // }, this);
+        // this.setTouch();
+        // //this.InitBullet();
+        // //this.createBullet();
         
         cc.audioEngine.playEffect(this.backgroundSound, false);
       

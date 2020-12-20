@@ -1,0 +1,42 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "road",
+  "_objFlags": 0,
+  "_native": "",
+  "_duration": 0.45,
+  "sample": 60,
+  "speed": 0.1,
+  "wrapMode": 2,
+  "curveData": {
+    "props": {
+      "position": [
+        {
+          "frame": 0,
+          "value": [
+            132,
+            -231
+          ],
+          "motionPath": [
+            [
+              -4,
+              -90,
+              80,
+              -114,
+              -79,
+              -69
+            ]
+          ]
+        },
+        {
+          "frame": 0.45,
+          "value": [
+            -187,
+            -141
+          ],
+          "motionPath": []
+        }
+      ]
+    }
+  },
+  "events": []
+}
