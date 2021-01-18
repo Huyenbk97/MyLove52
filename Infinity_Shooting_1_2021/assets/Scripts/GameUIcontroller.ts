@@ -1,79 +1,98 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 const {ccclass, property} = cc._decorator;
-
 @ccclass
 export default class GameUIcontroller extends cc.Component {
-  static Instance: GameUIcontroller=null;
+  static Instance: GameUIcontroller = null;
+    @property
+    portrait: boolean = true;
+    @property
+    landscape: boolean = true;
     @property(cc.Node)
-    revicePopup:cc.Node=null;
-
-
-
-    // LIFE-CYCLE CALLBACKS:
-
+    Ship: cc.Node = null;
+    @property(cc.Node)
+    Boss: cc.Node = null;
+    @property(cc.Node)
+    Text: cc.Node = null;
+    @property(cc.Node)
+    IconGame: cc.Node = null;
+    @property(cc.Node)
+    ButtonPlay: cc.Node = null;
+    @property(cc.Node)
+    Canvas: cc.Node = null;
+    @property
+    width: number = 414;
+    @property
+    setPositionDoc: boolean = true;
+    @property
+    manhinhxoay: boolean = false;
+    @property
+    setPositionNgang: boolean = true;
+    @property
+    height: number=736;
     onLoad() {
         GameUIcontroller.Instance = this;
+      if (window.matchMedia("(orientation: portrait)").matches) {
+        this.Ship.setPosition(this.Canvas.getPosition().x * 28.331 / 540, -this.Canvas.getPosition().y * 420.449 / 950);
+       }
+      if (window.matchMedia("(orientation: landscape)").matches) {
+        this.Ship.setPosition(this.Canvas.getPosition().x * 20 / 540, -this.Canvas.getPosition().y * 155 / 950);
+       }
     }
-
     start () {
+    }
+  reSize() {
+    this.manhinhxoay = false;
     
+    
+    if (screen.width >= 768) {
+      if (window.matchMedia("(orientation: portrait)").matches) {
+        this.ButtonPlay.setPosition(this.Canvas.getPosition().x * 28 / 540, -this.Canvas.getPosition().y * 630 / 950);
+        this.IconGame.setPosition(this.Canvas.getPosition().x * 340 / 540, -this.Canvas.getPosition().y * 630 / 950);
+        this.ButtonPlay.setScale(1, 1);
+        this.IconGame.setScale(0.5, 0.5);
+      }
     }
-  
-  showBanner() {
-    if (window.matchMedia("(orientation: portrait)").matches) {
-      cc.find("Canvas/Ship").active = false;
-      cc.find("Canvas/Node3").active = false;
-      console.log("màn hình dọc");
-      cc.audioEngine.pauseMusic();
-      cc.audioEngine.pauseAllEffects();
-      this.revicePopup.active = true;
-      // this.revicePopup.opacity=0;
-      // this.revicePopup.scale=0.2;
-      this.node = cc.find("Canvas/Popup/YES");
-      this.node.setPosition(181, -210);
-      this.node.setScale(1.4, 1.4);
-      this.node = cc.find("Canvas/Popup/NO");
-      this.node.setPosition(-187, -210);
-      this.node.setScale(1.4, 1.4);
-      this.node = cc.find("Canvas/Popup/Text");
-      this.node.setPosition(72, 27);
-      this.node.setScale(1.5, 1.5);
-   
-    }
-             
-    if (window.matchMedia("(orientation: landscape)").matches) {
-      cc.find("Canvas/Ship").active = false;
-      cc.find("Canvas/Node3").active = false;
-      console.log("màn hình ngang");
-      cc.audioEngine.pauseMusic();
-      cc.audioEngine.pauseAllEffects();
-      //this.revicePopup.active = true;
-      // this.revicePopup.opacity=0;
-      // this.revicePopup.scale=0.2;
-      this.revicePopup.active = true;
-      // this.revicePopup.opacity=0;
-      // this.revicePopup.scale=0.2;
-      this.node = cc.find("Canvas/Popup/YES");
-      this.node.setPosition(190, -210);
-      this.node.setScale(1, 1);
-      this.node = cc.find("Canvas/Popup/NO");
-      this.node.setPosition(-141, -210);
-      this.node.setScale(1, 1);
-      this.node = cc.find("Canvas/Popup/Text");
-      this.node.setPosition(60, 28);
-      this.node.setScale(1, 1);
-     
-    }
+    else
+      if (window.matchMedia("(orientation: portrait)").matches) {
+        if (screen.width == 375) {
+          console.log("iphone x");
+          
+          this.IconGame.setScale(0.7, 0.7);
+          this.IconGame.setPosition(cc.v2(this.Canvas.width / 2 * 2 / 3, -this.Canvas.height / 2 * 6.5 / 8));
+        } else {
+          this.Ship.setScale(1, 1);
+          try {
+            this.Boss.setScale(0.7, 0.7);
+          } catch (error) {
+          }
+          this.ButtonPlay.setPosition(this.Canvas.getPosition().x * 18 / 540, -this.Canvas.getPosition().y * 800 / 950);
+          this.IconGame.setPosition(this.Canvas.getPosition().x * 395 / 540, -this.Canvas.getPosition().y * 798.587 / 950);
+          this.ButtonPlay.setScale(1, 1);
+          this.IconGame.setScale(1, 1);
+          this.width = window.innerWidth;
+          this.height = window.innerHeight;
+          this.IconGame.setContentSize(cc.size(180 * this.width / 414, 180 * this.height / 736);
+          this.Text.setScale(1, 1);
+        }
+      }     
+     if (window.matchMedia("(orientation: landscape)").matches) {
+       this.Ship.setScale(0.4, 0.4);
+       try {
+        this.Boss.setScale(0.3, 0.3);
+       } catch (error) {      
+       }
+       this.IconGame.setPosition(cc.v2(this.Canvas.width / 2 * 2.5/ 3, -this.Canvas.height / 2 * 2/ 8));
+       this.ButtonPlay.setScale(0.5, 0.5);
+       this.ButtonPlay.setPosition(cc.v2(16, -this.Canvas.height / 2 * 2.3/ 8));
+       this.ButtonPlay.setScale(0.6, 0.6);
+       this.IconGame.setScale(0.4, 0.4);
+       this.Text.setScale(0.6,0.6);
+     }
  
+  }
+ 
+  update(dt) {
+
+    window.addEventListener('orientationchange', this.reSize);  
+    this.reSize();
     }
-    hideBanner(){
-        this.revicePopup.active=false;
-    }
-    update (dt) {}
 }

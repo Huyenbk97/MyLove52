@@ -13460,7 +13460,7 @@ declare namespace cc {
 		!#zh 返回一个宽度为 0 和高度为 0 的 Size 对象。 */
 		static ZERO: Size;		
 		width: number;		
-		height: number;		
+	height: number;		
 		/**
 		!#en TODO
 		!#zh 克隆 size 对象。
